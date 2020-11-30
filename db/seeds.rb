@@ -10,9 +10,9 @@ User.destroy_all
 10.times do
     user = User.create!(
         username: Faker::Twitter.screen_name,
-        password: "1234",
         email: Faker::Internet.email,
-        wallet: rand(100..2000)
+        wallet: rand(100..2000),
+        password_digest: User.digest('password')
         )
 
     3.times do

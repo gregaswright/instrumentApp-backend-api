@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :carts
       resources :listings
       resources :users
+      post '/login', to: 'auth#create'
     end
   end
   
